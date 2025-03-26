@@ -6,7 +6,12 @@ export const App = () => {
   const [videoCategory, setVideoCategory] = useState(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
-  const isDebug = new URLSearchParams(window.location.search).get('debug') === 'true';
+  const searchParams = new URLSearchParams(window.location.search);
+  const isDebug = searchParams.get('debug') === 'true';
+  const darkMode = searchParams.get('dark') === 'true';
+  if (darkMode) {
+    document.body.setAttribute('data-theme', 'dark');
+  }
 
   useEffect(() => {
     fetch("/api/data.json")
