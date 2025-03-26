@@ -7,7 +7,7 @@ export const YoutubeEmbed = ({video} :  {video: Video}) => (
           src={`https://www.youtube.com/embed/${video.youtubeId}`} 
           title={video.title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          style={{aspectRatio: '16/9' ,border: 'none', borderRadius: '10px'}}
+          style={{aspectRatio: '16 / 9' ,border: 'none', borderRadius: '10px'}}
           allowFullScreen
     />
 );
