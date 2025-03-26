@@ -11,14 +11,14 @@ export const Hero = ({category, selectedVideo} :  {category: VideoCategory, sele
     }}>
         <div className='hero_container_left flex'>
             <div className='hero_brand'>BibleProject</div>
-            <div className='hero_details'>
+            <div className='hero_details fade-in'>
                 <h1>{category.title}</h1>
                 <hr></hr>
                 <h3 className='hero_description'>{category.description}</h3>
             </div>
         </div>
-        {selectedVideo ? <div className='hero_container_right'>
-            <YoutubeEmbed video={selectedVideo}></YoutubeEmbed>
-        </div> : <div  style={{aspectRatio: '16 / 9'}} className='hero_container_series_image'/>}
+        <div className='hero_container_right'>
+            {selectedVideo != null ? <YoutubeEmbed video={selectedVideo}></YoutubeEmbed> : <div  style={{aspectRatio: '16 / 9'}} className='hero_container_series_image'/>}
+        </div>
     </div>
 );

@@ -56,6 +56,7 @@ const VideoCard = ({video, isSelected, isNewest, isDebug, onSelectVideo} : {vide
                     }}
                     >
                     {(isSelected || isNewest) ? <div className="video_card_image_chip">{isSelected ? "Selected" : "Newest"}</div> : null}
+                    <div className="video_card_image_mini-title">{video.title}</div>
                     </div>
                     <h5 
                         className='clickable'

@@ -16,6 +16,19 @@ body {
     cursor: pointer
 }
 
+@keyframes fadeIn{
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+.fade-in {
+    animation: fadeIn ease-in 1s;
+}
+ 
 .category-container{
     overflow: hidden;
 }
@@ -27,7 +40,7 @@ body {
 }
 
 .hero_container_series_image {
-    width: 60%;
+    width: 100%;
     height: auto;
     overflow: hidden;
     background-size: cover;
@@ -58,6 +71,7 @@ body {
 }
 
 .hero_container_right {
+    align-content: center;
     flex-basis: 60%;
 }
 
@@ -105,6 +119,10 @@ body {
 .video_card_image:hover,
 .video_card_image.selected {
     box-shadow: var(--video-color) 0px 25px 20px -20px;
+}
+
+.video_card_image_mini-title {
+    display: none;
 }
 
 .video_card_error_overlay {
@@ -184,4 +202,48 @@ body {
 .video_card_collapse_button.expanded {
     transform: rotate(225deg);
     transition: transform var(--ease-in);
+}
+
+@media (max-width: 768px) {
+    .hero_container {
+        flex-direction: column;
+    }
+
+    .hero_container_left {
+        gap: 30px;
+    }
+
+    .video_card:hover {
+        box-shadow: none;
+        opacity: 0.8;
+        transition: opacity 0.3s;
+    }
+
+    .video_card_image {
+        width: 8rem;
+        height: 20rem;
+        background-color: var(--video-color);
+        background-position: 100% 100%;
+        background-size: auto 50%; 
+        background-image: var(--mini-image);
+    }
+
+    .video_card h5 {
+        display: none;
+    }
+    .video_card_image_chip {
+        bottom: 0;
+        position: absolute;
+        margin-bottom: 10px;
+    }
+    .video_card_image_mini-title {
+        display: flex;
+        font-size: 1rem;
+        padding: 1rem;
+        font-weight: bold;
+        color: white;
+    }
+    .video_card_description {
+        padding-top: 1rem;
+    }
 }
