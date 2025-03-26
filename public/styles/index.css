@@ -21,7 +21,7 @@ body {
 
 .hero_container {
     padding: 3rem 1rem;
-    border-bottom: 5px solid black;
+    border-bottom: 5px solid var(--category-color);
     gap: 20px;
 }
 
@@ -56,7 +56,7 @@ body {
 }
 
 .videos_container {
-    padding-top: 1rem;
+    padding: 1rem 0;
     overflow-x: auto;
     display: flex;
     gap: 10px;
@@ -90,12 +90,40 @@ body {
     position: relative;
 }
 
-.video_card_image:hover {
+.video_card_image:hover,
+.video_card_image.selected {
     box-shadow: var(--video-color) 0px 25px 20px -20px;
 }
 
-.video_card.selected .video_card_image {
-    box-shadow: var(--video-color) 0px 25px 20px -20px;
+.video_card_error_overlay {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+@keyframes shake-shake-shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(3deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-3deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+
+.video_card_retry_button:hover {
+    animation: shake-shake-shake 0.25s infinite;
 }
 
 .video_card_image_chip {

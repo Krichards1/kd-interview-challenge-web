@@ -18,7 +18,7 @@ export const App = () => {
   }, []);
 
   return videoCategory && <div className="category-container">
-    <Hero category={videoCategory} selectedVideo={videoCategory.videos[0]}></Hero>
-    <Videos videos={videoCategory.videos} selectedVideo={videoCategory.videos[0]}></Videos>
+    <Hero category={videoCategory} selectedVideo={selectedVideo}></Hero>
+    <Videos videos={videoCategory.videos} selectedVideo={selectedVideo} onSelectVideo={setSelectedVideo} isDebug={isDebug}></Videos>
   </div>;
 };
