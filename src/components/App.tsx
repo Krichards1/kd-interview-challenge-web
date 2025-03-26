@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import {Hero } from './Hero';
 import { Videos } from './Videos';
+import { Video, VideoCategory } from "../../public/api/models";
 
 export const App = () => {
-  const [videoCategory, setVideoCategory] = useState(null);
-  const [selectedVideo, setSelectedVideo] = useState(null);
+  const [videoCategory, setVideoCategory] = useState<VideoCategory | null>(null);
+  const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
 
   const searchParams = new URLSearchParams(window.location.search);
   const isDebug = searchParams.get('debug') === 'true';
